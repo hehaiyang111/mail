@@ -58,7 +58,7 @@
     methods: {
       loadBooks () {
         var _this = this
-        this.$axios.get('/books').then(resp => {
+        this.$axios.get('/library/findAllBook').then(resp => {
           if (resp && resp.status === 200) {
             _this.books = resp.data
           }
@@ -71,7 +71,7 @@
       searchResult () {
         var _this = this
         this.$axios
-          .post('/search', {
+          .post('/library/findByAuthorOrName', {
             keywords: this.$refs.searchBar.keywords
           }).then(resp => {
           if (resp && resp.status === 200) {
@@ -86,7 +86,7 @@
           type: 'warning'
         }).then(() => {
             this.$axios
-              .post('/delete', {id: id}).then(resp => {
+              .post('/library/deleteBook', {id: id}).then(resp => {
               if (resp && resp.status === 200) {
                 this.loadBooks()
               }

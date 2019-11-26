@@ -20,9 +20,14 @@
     methods: {
       listByCategory () {
         var _this = this
-        var cid = this.$refs.sideMenu.cid
-        var url = 'categories/' + cid + '/books'
-        this.$axios.get(url).then(resp => {
+        var cid1 = this.$refs.sideMenu.cid
+        console.log(cid1);
+        var url = '/library/findAllBookByCid'
+        this.$axios.
+        post(url, {
+            cid: cid1
+          })
+          .then(resp => {
           if (resp && resp.status === 200) {
             _this.$refs.booksArea.books = resp.data
           }

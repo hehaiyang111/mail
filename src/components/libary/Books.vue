@@ -111,8 +111,8 @@
           press: item.press,
           abs: item.abs,
           category: {
-            id: item.category.id.toString(),
-            name: item.category.name
+            id: item.cid.toString(),
+            name: item.typeName
           }
         }
       }

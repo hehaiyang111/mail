@@ -43,7 +43,10 @@
         <el-button type="primary" @click="onSubmit">确 定</el-button>
       </div>
     </el-dialog>
+    
   </div>
+
+  
 </template>
 
 <script>
@@ -83,7 +86,7 @@
       },
       onSubmit () {
         this.$axios
-          .post('/books', {
+          .post('/library/addorupdatebook', {
             id: this.form.id,
             cover: this.form.cover,
             title: this.form.title,
@@ -98,7 +101,7 @@
             this.$emit('onSubmit')
           }
         })
-      }
+      },
     }
   }
 </script>

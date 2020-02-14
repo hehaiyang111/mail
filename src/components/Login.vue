@@ -12,7 +12,10 @@
                   auto-complete="off" placeholder="密码"></el-input>
       </el-form-item>
       <el-form-item style="width: 100%">
-        <el-button type="primary" style="width: 100%;background: #505458;border: none" v-on:click="login">登录</el-button>
+        <el-button type="primary" style="width: 80%;background: #505458;border: none" v-on:click="login">登录</el-button>
+      </el-form-item>
+      <el-form-item>
+        <el-button type="primary" style="width: 80%;background: #505458;border: none" v-on:click="register">注册</el-button>
       </el-form-item>
     </el-form>
   </body>
@@ -26,7 +29,7 @@
     data () {
       return {
         loginForm: {
-          username: 'hhy',
+          username: 'admin',
           password: '123'
         },
         responseResult: []
@@ -54,6 +57,9 @@
           })
           .catch(failResponse => {
           })
+      },
+      register(){
+        this.$router.replace('/register')
       }
     }
   }

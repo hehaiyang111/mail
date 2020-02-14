@@ -1,6 +1,7 @@
 <template>
   <div>
     <el-row style="height: 840px;">
+      <!-- 搜索框 -->
       <search-bar @onSearch="searchResult" ref="searchBar"></search-bar>
       <el-tooltip effect="dark" placement="right"
                   v-for="item in books.slice((currentPage-1)*pagesize,currentPage*pagesize)"
@@ -28,6 +29,7 @@
       </el-tooltip>
       <edit-form @onSubmit="loadBooks()" ref="edit"></edit-form>
     </el-row>
+    <!-- 分页 -->
     <el-row>
       <el-pagination
         @current-change="handleCurrentChange"

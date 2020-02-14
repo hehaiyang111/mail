@@ -5,6 +5,7 @@ import AppIndex from '@/components/home/AppIndex'
 import Login from '@/components/Login'
 import Home from '@/components/Home'
 import LibaryIndex from '@/components/libary/LibaryIndex'
+import Register from '@/components/Register'
 Vue.use(Router)
 
 export default new Router({
@@ -13,6 +14,7 @@ export default new Router({
       path: '/',
       name: 'HelloWorld',
       component: HelloWorld,
+      redirect:'/login',
       meta: {
         requireAuth: true
       }
@@ -46,6 +48,11 @@ export default new Router({
       path: '/login',
       name: 'Login',
       component: Login
+    },
+    {
+      path: '/register',
+      name: 'Register',
+      component: Register
     }
   ]
 })
